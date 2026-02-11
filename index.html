@@ -1284,6 +1284,26 @@
         letter-spacing: 0.12em !important;
       }
     }
+
+
+    /* ================================
+       MOBILE BUTTON – tighter like desktop
+    ================================ */
+    @media (max-width: 520px) {
+      #welcome .enter-btn {
+        white-space: nowrap;
+
+        /* Reduce spacing */
+        letter-spacing: 0.03em !important;
+        /* tighter letters */
+        padding: 0.9rem 1.4rem !important;
+        /* smaller horizontal padding */
+        font-size: 0.95rem !important;
+
+        /* Remove exaggerated glow */
+        box-shadow: 0 8px 20px rgba(255, 80, 120, 0.25) !important;
+      }
+    }
   </style>
 </head>
 
