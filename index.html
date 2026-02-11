@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Benedicta 💕 | Happy Valentine's Day</title>
+  <title>For Benedicta 💕 | You Are My Everything</title>
   <meta name="description"
-    content="A romantic Valentine's celebration dedicated to Benedicta - with love letters, memories, and heartfelt messages." />
+    content="A romantic celebration dedicated to Benedicta - with love letters, memories, and heartfelt messages." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Mrs+Saint+Delafield&display=swap"
@@ -380,6 +380,103 @@
       transform: scale(0.98);
     }
 
+    /* ================================
+       CLICK ME CHARACTER (WELCOME)
+    ================================ */
+    .enter-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .click-character {
+      position: relative;
+      width: 96px;
+      height: 130px;
+      animation: bounce 2.6s ease-in-out infinite;
+      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, .35));
+    }
+
+    /* head */
+    .click-character .head {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin: 0 auto;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .35), transparent 35%),
+        linear-gradient(135deg, rgba(255, 180, 205, 1), rgba(255, 105, 150, 1));
+    }
+
+    /* body */
+    .click-character .body {
+      width: 32px;
+      height: 46px;
+      border-radius: 18px;
+      margin: 6px auto 0;
+      background: linear-gradient(135deg, rgba(255, 95, 150, 1), rgba(255, 45, 120, 1));
+    }
+
+    /* arm holding sign */
+    .click-character .arm {
+      position: absolute;
+      width: 28px;
+      height: 8px;
+      border-radius: 10px;
+      top: 62px;
+      left: 42px;
+      transform: rotate(-18deg);
+      background: rgba(255, 95, 150, 1);
+    }
+
+    /* sign */
+    .click-character .sign {
+      position: absolute;
+      top: 18px;
+      left: 62px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .95);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, .25);
+      transform: rotate(-6deg);
+      animation: pulseSlow 2.2s ease-in-out infinite;
+      border: 1px solid rgba(0, 0, 0, .06);
+    }
+
+    .click-character .sign::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      width: 12px;
+      height: 4px;
+      transform: translateY(-50%);
+      border-radius: 8px;
+      background: rgba(255, 95, 150, 1);
+    }
+
+    .click-character .sign span {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      letter-spacing: .12em;
+      font-size: .75rem;
+      color: rgba(255, 45, 120, 1);
+      white-space: nowrap;
+    }
+
+    /* Mobile: put character above button */
+    @media (max-width: 520px) {
+      .enter-wrap {
+        flex-direction: column;
+        gap: .75rem;
+      }
+
+      .click-character {
+        transform: scale(.9);
+      }
+    }
+
     /* Particles */
     .particle {
       position: absolute;
@@ -459,133 +556,195 @@
       transform: translateY(0);
     }
 
-    /* Timeline */
-    .timeline-section {
+    /* ================================
+       REASONS - PAPER HEART COLLAGE
+    ================================ */
+    .reasons-section {
       padding: 6rem 1.5rem;
       min-height: 100vh;
       position: relative;
     }
 
-    .timeline {
-      max-width: 60rem;
+    /* Paper background container */
+    .love-collage {
+      position: relative;
+      max-width: 980px;
       margin: 0 auto;
-      position: relative;
+      border-radius: 18px;
+      overflow: visible;
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+      border: 0;
     }
 
-    .timeline-item {
-      display: flex;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .timeline-card {
-      flex: 1;
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      padding: 2rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 var(--glass-border);
-      border: 1px solid var(--glass-border);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .timeline-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--gradient-accent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .timeline-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 50px hsla(340, 100%, 60%, 0.3);
-    }
-
-    .timeline-card:hover::before {
-      opacity: 1;
-    }
-
-    .timeline-card .corner {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 6rem;
-      height: 6rem;
-      background: linear-gradient(135deg, var(--accent-pink), transparent);
-      opacity: 0.1;
-      border-bottom-left-radius: 100%;
-    }
-
-    .timeline-card .date {
-      font-size: 0.9rem;
-      color: var(--accent-pink);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 500;
-    }
-
-    .timeline-card h3 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-      font-family: 'Dancing Script', cursive;
-    }
-
-    .timeline-card p {
-      color: var(--text-secondary);
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    .timeline-card .mini-heart {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      color: var(--accent-pink);
-      font-size: 1.5rem;
-      opacity: 0.3;
-      animation: pulseSlow 3s ease infinite;
-    }
-
-    .timeline-dot {
+    .love-collage::before {
       display: none;
     }
 
-    @media (min-width: 768px) {
-      .timeline-dot {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .main-heart {
+      width: min(820px, 95vw);
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 18px 35px rgba(0, 0, 0, .45));
+    }
+
+    /* Heart stage */
+    .heart-stage {
+      position: relative;
+      width: min(820px, 92vw);
+      height: min(620px, 68vw);
+      margin: 0 auto;
+    }
+
+    /* Tiles (photos) */
+    .heart-tile {
+      position: absolute;
+      width: clamp(52px, 6.2vw, 84px);
+      height: clamp(52px, 6.2vw, 84px);
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .20);
+      transform: translate(-50%, -50%);
+      transition: transform .25s ease, box-shadow .25s ease;
+      background: #ddd;
+    }
+
+    .heart-tile:hover {
+      transform: translate(-50%, -50%) scale(1.06);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, .28);
+      z-index: 5;
+    }
+
+    /* Center note */
+    .center-note {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%) rotate(-6deg);
+      z-index: 6;
+    }
+
+    .note-paper {
+      position: relative;
+      padding: 18px 26px;
+      background: #f4efe7;
+      border-radius: 10px;
+      box-shadow: 0 18px 55px rgba(0, 0, 0, .25);
+      border: 1px solid rgba(0, 0, 0, .08);
+    }
+
+    .note-paper p {
+      margin: 0;
+      font-family: "Dancing Script", cursive;
+      font-size: clamp(1.4rem, 2.3vw, 2.1rem);
+      color: rgba(40, 40, 40, .85);
+      line-height: 1.1;
+      letter-spacing: .4px;
+    }
+
+    /* tape */
+    .tape {
+      position: absolute;
+      width: 68px;
+      height: 26px;
+      background: rgba(235, 220, 190, .85);
+      border: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
+      backdrop-filter: blur(2px);
+    }
+
+    .tape-left {
+      left: -20px;
+      top: -14px;
+      transform: rotate(-18deg);
+    }
+
+    .tape-right {
+      right: -20px;
+      top: -10px;
+      transform: rotate(16deg);
+    }
+
+    /* mini notes */
+    .mini-note {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      z-index: 5;
+    }
+
+    .mini-paper {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background: #f4efe7;
+      border: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 14px 42px rgba(0, 0, 0, .22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mini-tape {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-7deg);
+      width: 64px;
+      height: 24px;
+      background: rgba(235, 220, 190, .85);
+      border: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+    }
+
+    .note-left {
+      left: 6%;
+      top: 68%;
+      transform: rotate(-7deg);
+    }
+
+    .note-right {
+      right: 7%;
+      top: 26%;
+      transform: rotate(8deg);
+    }
+
+    .note-bottom {
+      right: 12%;
+      bottom: 5%;
+      transform: rotate(-10deg);
+      width: 140px;
+      height: 90px;
+    }
+
+    .doodle {
+      font-size: 2.2rem;
+      opacity: .85;
+    }
+
+    .kiss {
+      font-size: 2rem;
+      opacity: .9;
+    }
+
+    .mini-text {
+      font-family: "Dancing Script", cursive;
+    }
+
+    /* on small screens hide mini notes for cleanliness */
+    @media (max-width: 520px) {
+      .mini-note {
+        display: none;
       }
 
-      .timeline-dot .dot {
-        width: 1.2rem;
-        height: 1.2rem;
-        border-radius: 50%;
-        background: var(--gradient-accent);
-        box-shadow: 0 0 20px var(--accent-pink);
-      }
-
-      .timeline-dot .line {
-        width: 3px;
-        flex: 1;
-        background: linear-gradient(to bottom, var(--accent-pink), transparent);
-      }
-
-      .timeline-spacer {
-        flex: 1;
-        display: block;
+      .center-note {
+        top: 42%;
       }
     }
+
+
 
     /* Gallery */
     .gallery-section {
@@ -747,6 +906,7 @@
     @media (min-width: 768px) {
       .letters-grid {
         grid-template-columns: 1fr 1fr;
+        align-items: start;
       }
     }
 
@@ -952,35 +1112,108 @@
       border-top: 1px solid var(--glass-border);
     }
 
-    /* Music Control */
-    .music-btn {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 120;
-      width: 4rem;
-      height: 4rem;
-      border-radius: 50%;
-      background: var(--gradient-accent);
-      color: white;
-      border: 2px solid var(--glass-border);
-      cursor: pointer;
-      font-size: 1.8rem;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 40px hsla(340, 100%, 60%, 0.4);
-      transition: all 0.3s ease;
-      display: none;
-      backdrop-filter: blur(10px);
-    }
-
-    .music-btn:hover {
-      transform: scale(1.15) rotate(5deg);
-      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), 0 0 60px hsla(340, 100%, 60%, 0.6);
-    }
-
-    .music-btn.show {
+    /* Countdown Timer */
+    .countdown-section {
+      padding: 6rem 1.5rem;
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+    }
+
+    .countdown-container {
+      max-width: 50rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .since-text {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .countdown-display {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .time-unit {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 2px solid var(--glass-border);
+      border-radius: 1.5rem;
+      padding: 2rem 2.5rem;
+      min-width: 8rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 var(--glass-border);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .time-unit::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-accent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .time-unit:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 40px hsla(340, 100%, 60%, 0.3);
+    }
+
+    .time-unit:hover::before {
+      opacity: 1;
+    }
+
+    .time-value {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 700;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Outfit', sans-serif;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      animation: glowPulse 4s ease-in-out infinite;
+    }
+
+    .time-label {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 500;
+    }
+
+    .love-message {
+      font-size: 1.4rem;
+      color: var(--accent-pink);
+      font-family: 'Dancing Script', cursive;
+      animation: pulseSlow 3s ease-in-out infinite;
+    }
+
+    @media (max-width: 768px) {
+      .countdown-display {
+        gap: 1rem;
+      }
+
+      .time-unit {
+        padding: 1.5rem 1.5rem;
+        min-width: 6rem;
+      }
     }
   </style>
 </head>
@@ -992,7 +1225,7 @@
     <div class="floating-hearts" id="welcome-hearts"></div>
     <div class="content">
       <span class="heart-icon">♥</span>
-      <p class="subtitle">A Valentine's Celebration</p>
+      <p class="subtitle">A Love Celebration</p>
       <h1>For Benedicta</h1>
       <div class="divider">
         <span class="line"></span>
@@ -1000,7 +1233,19 @@
         <span class="line"></span>
       </div>
       <p class="quote">Every love story is beautiful, but ours is my favorite</p>
-      <button class="enter-btn" onclick="enterSite()">Enter Our Story</button>
+      <div class="enter-wrap">
+        <div class="click-character" aria-hidden="true">
+          <div class="head"></div>
+          <div class="body"></div>
+          <div class="arm"></div>
+
+          <div class="sign">
+            <span>CLICK ME</span>
+          </div>
+        </div>
+
+        <button class="enter-btn" onclick="enterSite()">FOR MY BEAUTIFUL BENIE/button>
+      </div>
     </div>
     <!-- Sparkles -->
     <div class="sparkle" style="left:15%;top:20%;animation-delay:0s"></div>
@@ -1015,17 +1260,51 @@
   <div id="main-content">
     <div class="floating-hearts" id="main-hearts"></div>
 
-    <!-- Music Button -->
-    <button class="music-btn show" id="musicBtn" onclick="toggleMusic()">🔇</button>
 
-    <!-- TIMELINE -->
-    <section class="timeline-section">
+
+    <!-- REASONS I LOVE YOU -->
+    <section class="reasons-section">
       <div class="section-header reveal">
-        <p class="label">Our Journey</p>
-        <h2>Love Timeline</h2>
+        <p class="label">My Dearest Benedicta</p>
+        <h2>Happy Valentine's Day Baby girl</h2>
         <div class="divider"><span class="line"></span><span class="heart">♥</span><span class="line"></span></div>
       </div>
-      <div class="timeline" id="timeline"></div>
+
+      <!-- ✅ New collage container -->
+      <div class="love-collage reveal">
+        <img src="images/main.png" class="main-heart" alt="Heart collage" />
+      </div>
+    </section>
+
+    <!-- COUNTDOWN TIMER -->
+    <section class="countdown-section">
+      <div class="section-header reveal">
+        <p class="label">Time Together</p>
+        <h2>Our Love Story</h2>
+        <div class="divider"><span class="line"></span><span class="heart">♥</span><span class="line"></span></div>
+      </div>
+      <div class="countdown-container reveal">
+        <p class="since-text">Together since October 19th, 2025</p>
+        <div class="countdown-display" id="countdown">
+          <div class="time-unit">
+            <div class="time-value" id="days">0</div>
+            <div class="time-label">Days</div>
+          </div>
+          <div class="time-unit">
+            <div class="time-value" id="hours">0</div>
+            <div class="time-label">Hours</div>
+          </div>
+          <div class="time-unit">
+            <div class="time-value" id="minutes">0</div>
+            <div class="time-label">Minutes</div>
+          </div>
+          <div class="time-unit">
+            <div class="time-value" id="seconds">0</div>
+            <div class="time-label">Seconds</div>
+          </div>
+        </div>
+        <p class="love-message">Every second with you is a treasure ♥</p>
+      </div>
     </section>
 
     <!-- GALLERY -->
@@ -1059,7 +1338,7 @@
         <div id="messages"></div>
         <div class="final-message reveal">
           <span class="big-heart">♥</span>
-          <h3>Happy Valentine's Day</h3>
+          <h3>You Mean Everything To Me</h3>
           <p class="name">Benedicta</p>
           <p class="forever">With all my love, now and forever ♥</p>
         </div>
@@ -1079,14 +1358,7 @@
   </div>
 
   <script>
-    // DATA
-    const timelineEvents = [
-      { date: "February 14, 2022", title: "The Day We Met", description: "Our eyes met across the room, and I knew in that moment that my life was about to change forever. Your smile lit up my world." },
-      { date: "March 20, 2022", title: "Our First Date", description: "We spent hours talking over coffee, sharing our dreams and fears. Time seemed to stand still when I was with you." },
-      { date: "June 15, 2022", title: "I Knew You Were The One", description: "Walking along the beach at sunset, I realized I couldn't imagine my life without you by my side." },
-      { date: "December 25, 2022", title: "Our First Christmas Together", description: "Sharing the magic of the holidays with you made everything more beautiful. You are my greatest gift." },
-      { date: "February 14, 2023", title: "One Year of Love", description: "365 days of laughter, love, and countless memories. Here's to forever with you, my love." },
-    ];
+
 
     // PHOTOS AND VIDEOS GALLERY
     // You can use any image format: .jpg, .png, .jpeg, .webp, etc.
@@ -1095,26 +1367,93 @@
       { type: "video", src: "images/photo1.MP4", alt: "Our moment" },
       { type: "image", src: "images/photo_1_2026-02-11_01-13-15.jpg", alt: "Together" },
       { type: "image", src: "images/photo_2_2026-02-11_01-13-15.jpg", alt: "Love" },
+      { type: "video", src: "images/IMG_1990.MOV", alt: "Cherished memories" },
       { type: "image", src: "images/photo_3_2026-02-11_01-13-15.jpg", alt: "Happiness" },
       { type: "image", src: "images/photo_4_2026-02-11_01-13-15.jpg", alt: "Adventure" },
       { type: "image", src: "images/photo_5_2026-02-11_01-13-15.jpg", alt: "Forever" },
       { type: "video", src: "images/61d407a8-202d-4b11-a822-57e1bb2eee21.MP4", alt: "Special memory" },
       { type: "image", src: "images/156dbb1a-df66-421a-997e-4a06c706297e.JPG", alt: "Joy" },
+      { type: "video", src: "images/wdww.MOV", alt: "Beautiful moments" },
       { type: "image", src: "images/b757c81e-8cf4-4b33-9166-e2477a918249.JPG", alt: "Memories" },
       { type: "image", src: "images/1555F009-3192-430A-AD36-8998A334906A.PNG", alt: "Beautiful" },
       { type: "image", src: "images/4E8A01DD-28E2-4488-9A57-9C49A548254A.PNG", alt: "Special" },
       { type: "image", src: "images/C26E92E0-098B-44DC-B9A5-2965F42F6CE6.PNG", alt: "Precious" },
       { type: "image", src: "images/EBED8586-EE98-4104-8DD7-83C0F662C0E8.PNG", alt: "Us" },
-      { type: "image", src: "images/photo_1_2026-02-11_06-05-44.jpg", alt: "Sweet moments" },
       { type: "image", src: "images/photo_2_2026-02-11_06-05-44.jpg", alt: "Together forever" },
     ];
 
     const letters = [
-      { title: "My First Letter to You", content: "My Dearest Benedicta,\n\nFrom the moment I met you, I knew my life would never be the same. Your smile lights up every room, and your laughter is the sweetest melody I've ever heard.\n\nYou make every day brighter simply by being in it. I am so grateful that our paths crossed, and I promise to cherish every moment we share together.\n\nForever yours,\nYour Love" },
-      { title: "Why I Love You", content: "My Beautiful Benedicta,\n\nI love the way you see the world — with such wonder and kindness. I love how you make me want to be a better person every single day.\n\nYour strength inspires me, your gentleness comforts me, and your love completes me. Thank you for being exactly who you are.\n\nWith all my heart,\nYour Forever Love" },
-      { title: "A Promise to You", content: "My Precious Benedicta,\n\nI promise to stand by your side through every storm and every sunshine. I promise to hold your hand through the challenges and celebrate every victory with you.\n\nNo matter where life takes us, I promise my love for you will only grow stronger with each passing day.\n\nUntil forever,\nYour Devoted One" },
-      { title: "You Are My Everything", content: "My Darling Benedicta,\n\nYou are my morning sunshine and my evening star. You are the reason I believe in magic and the proof that dreams come true.\n\nEvery love song suddenly makes sense because of you. You are my everything, today, tomorrow, and always.\n\nEndlessly yours,\nYour One and Only" },
+      {
+        title: "My First Letter to You",
+        content: `Hi Benie,
+
+Oh my love, how are you? Don't blush too much, ohh 😂
+
+Wow, our first Valentine together. So far, I’m genuinely enjoying this journey with you. It’s been beautiful, soft, and really lovely.
+
+You make every day brighter just by being in it. That’s not exaggeration, that’s just the truth. I’m so grateful our paths crossed. Out of all the ways life could’ve gone, it brought me to you.
+
+I promise to cherish every moment we share together. All of it matters to me.
+
+And your beauty? Please. Your face alone could stop a bad day mid-sentence. Even when I’m being cringe and you give me that look 😂 the one with the raised brow, I still melt.
+
+Make note: that face lives rent-free in my head. Always remember this, Mami:
+
+You are admired. You are desired. You are safe with me.`
+      },
+      {
+        title: "Why I Love You",
+        content: `Benie,
+
+Let me tell you something dangerous: however you come, however you change, however life shapes you I’m already sold.
+
+Your smile and laugh are my favorite sounds. Your humor sneaks up on me when I least expect it. One minute I’m serious, the next minute I’m smiling seamlessly because of you.
+
+Call me cringe as much as you can 😌 I’ll still do it.
+
+Seeing you smile is worth every effort. I live to see you happy and smiling, always and forever.`
+      },
+      {
+        title: "A Promise to You",
+        content: `I promise to be honest with you, even when the truth feels heavy or the words aren't easy to find. My heart will always be a place where you can find the real me.
+
+I promise to respect your feelings. Whether it’s one of your soft days, an emotional day, or a day where you feel like you can take on the world all of them are welcome here.
+
+I promise to show up when life is light, and I will be right there standing next to you when things feel heavy.
+
+I won’t rush you. I won’t pressure you to be anything other than exactly who you are in this moment.
+
+I will never make you feel like your worth is tied to your strength; you are allowed to rest. You are allowed to just be.
+
+I promise to listen  not just to your words, but to the things you don't say.
+
+And on the days when I’m being annoying or a total cringe, take a breath and know it’s just my clumsy way of loving you. 😌
+
+This is me, promising you consistency.
+I’m in this for the longest Benie.`
+      },
+      {
+        title: "You Are My Everything",
+        content: `If the world ever feels loud, I want you to remember this: you don’t have to be strong alone.
+
+I admire your will, your heart, your fire. I also want to be your calm. Your safe place. The one you lean on when your emotions run deep.
+
+I see you — all of you. The playful you, the emotional you, and the strong, unstoppable you.
+
+And I’m not going anywhere.
+Not when you’re glowing,
+Not when you’re tired,
+Not when you’re soft,
+And not when you’re savage.
+
+You are my Benie. My Mami.
+
+I choose you again and again.
+
+And I pray continuously that God will protect your smile.`
+      }
     ];
+
 
     const messages = [
       "You are the love of my life",
@@ -1139,55 +1478,93 @@
     createHearts('welcome-hearts', 15);
 
     // ENTER SITE
+    let initialized = false;
+    let countdownInterval = null;
+
     function enterSite() {
+      startMusic(); // ✅ must be inside the click
+
       document.getElementById('welcome').classList.add('hidden');
+
       setTimeout(() => {
         document.getElementById('welcome').style.display = 'none';
+
         const main = document.getElementById('main-content');
         main.style.display = 'block';
         requestAnimationFrame(() => main.classList.add('visible'));
+
         createHearts('main-hearts', 15);
-        initReveal();
-        startMusic(); // Autoplay music
+
+        if (!initialized) {
+          initialized = true;
+
+          initializePage();
+          initReveal();
+
+          updateCountdown();
+          countdownInterval = setInterval(updateCountdown, 1000);
+        }
       }, 800);
     }
 
-    // RENDER TIMELINE
-    const tl = document.getElementById('timeline');
-    timelineEvents.forEach((ev, i) => {
-      tl.innerHTML += `
-    <div class="timeline-item reveal" style="transition-delay:${i * 0.1}s">
-      <div class="timeline-card">
-        <div class="corner"></div>
-        <div class="date">📅 ${ev.date}</div>
-        <h3>${ev.title}</h3>
-        <p>${ev.description}</p>
-        <span class="mini-heart">♥</span>
-      </div>
-      <div class="timeline-dot"><div class="dot"></div><div class="line"></div></div>
-      <div class="timeline-spacer"></div>
-    </div>`;
-    });
+    // INITIALIZATION - Render all sections when page loads
+    function initializePage() {
+      // ✅ RENDER REASONS - PAPER HEART COLLAGE (like the reference image)
+      // Collage is now a static image defined in HTML
 
-    // RENDER GALLERY
-    const gal = document.getElementById('gallery');
-    photos.forEach((p, i) => {
-      if (p.type === 'video') {
-        gal.innerHTML += `
-    <div class="gallery-item reveal" style="transition-delay:${i * 0.05}s" onclick="openLightbox(${i})">
-      <video src="${p.src}" autoplay muted loop playsinline></video>
-      <div class="overlay">▶️</div>
-    </div>`;
-      } else {
-        gal.innerHTML += `
-    <div class="gallery-item reveal" style="transition-delay:${i * 0.05}s" onclick="openLightbox(${i})">
-      <img src="${p.src}" alt="${p.alt}" loading="lazy" />
-      <div class="overlay">♥</div>
-    </div>`;
-      }
-    });
 
-    // LIGHTBOX
+      // RENDER GALLERY
+      const gal = document.getElementById('gallery');
+      photos.forEach((p, i) => {
+        if (p.type === 'video') {
+          gal.innerHTML += `
+      <div class="gallery-item reveal" style="transition-delay:${i * 0.05}s" onclick="openLightbox(${i})">
+        <video src="${p.src}" autoplay muted loop playsinline></video>
+        <div class="overlay">▶️</div>
+      </div>`;
+        } else {
+          gal.innerHTML += `
+      <div class="gallery-item reveal" style="transition-delay:${i * 0.05}s" onclick="openLightbox(${i})">
+        <img src="${p.src}" alt="${p.alt}" loading="lazy" />
+        <div class="overlay">♥</div>
+      </div>`;
+        }
+      });
+
+      // RENDER LETTERS
+      const lettersEl = document.getElementById('letters');
+      letters.forEach((l, i) => {
+        lettersEl.innerHTML += `
+      <div class="envelope reveal" id="env-${i}" style="transition-delay:${i * 0.1}s" onclick="toggleLetter(${i})">
+        <div class="seal">♥</div>
+        <div class="closed">
+          <span class="mail-icon">✉️</span>
+          <h3>${l.title}</h3>
+          <p class="tap">Tap to open 💌</p>
+        </div>
+        <div class="opened">
+          <h3><span class="h">♥</span> ${l.title}</h3>
+          <div class="letter-body"><p>${l.content}</p></div>
+          <p class="tap-close">Tap to close</p>
+        </div>
+      </div>`;
+      });
+
+      // RENDER MESSAGES
+      const msgsEl = document.getElementById('messages');
+      messages.forEach((m, i) => {
+        msgsEl.innerHTML += `
+      <div class="message-item reveal" style="transition-delay:${i * 0.15}s">
+        <span class="side-heart left">♥</span>
+        <p>"${m}"</p>
+        <span class="side-heart right">♥</span>
+      </div>`;
+      });
+    }
+
+    // Initialization is now handled in enterSite() function
+
+    // LIGHTBOX FUNCTIONS
     let currentPhoto = 0;
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxVideo = document.getElementById('lightbox-video');
@@ -1250,36 +1627,10 @@
       }
     }
 
-    // RENDER LETTERS
-    const lettersEl = document.getElementById('letters');
-    letters.forEach((l, i) => {
-      lettersEl.innerHTML += `
-    <div class="envelope reveal" id="env-${i}" style="transition-delay:${i * 0.1}s" onclick="toggleLetter(${i})">
-      <div class="seal">♥</div>
-      <div class="closed">
-        <span class="mail-icon">✉️</span>
-        <h3>${l.title}</h3>
-        <p class="tap">Tap to open 💌</p>
-      </div>
-      <div class="opened">
-        <h3><span class="h">♥</span> ${l.title}</h3>
-        <div class="letter-body"><p>${l.content}</p></div>
-        <p class="tap-close">Tap to close</p>
-      </div>
-    </div>`;
-    });
-    function toggleLetter(i) { document.getElementById('env-' + i).classList.toggle('open'); }
-
-    // RENDER MESSAGES
-    const msgsEl = document.getElementById('messages');
-    messages.forEach((m, i) => {
-      msgsEl.innerHTML += `
-    <div class="message-item reveal" style="transition-delay:${i * 0.15}s">
-      <span class="side-heart left">♥</span>
-      <p>"${m}"</p>
-      <span class="side-heart right">♥</span>
-    </div>`;
-    });
+    // TOGGLE LETTER FUNCTION
+    function toggleLetter(i) {
+      document.getElementById('env-' + i).classList.toggle('open');
+    }
 
     // SCROLL REVEAL
     function initReveal() {
@@ -1289,28 +1640,42 @@
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     }
 
-    // MUSIC
-    let audio = new Audio('benie.mp3');
-    audio.loop = true;
-    audio.volume = 0.3;
-    let playing = false;
+    // COUNTDOWN TIMER
+    function updateCountdown() {
+      const startDate = new Date('2025-10-19T00:00:00').getTime();
+      const now = new Date().getTime();
+      const timeDiff = now - startDate;
 
-    function toggleMusic() {
-      if (playing) {
-        audio.pause();
-        document.getElementById('musicBtn').textContent = '🔇';
-      }
-      else {
-        audio.play().catch(() => { });
-        document.getElementById('musicBtn').textContent = '🔊';
-      }
-      playing = !playing;
+      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
     }
 
+    // Countdown already initialized above
+
+    // MUSIC - starts on Enter click (no button)
+    let audio = null;
+
     function startMusic() {
-      audio.play().catch(() => { });
-      playing = true;
-      document.getElementById('musicBtn').textContent = '🔊';
+      if (!audio) {
+        audio = new Audio('benie.mp3');
+        audio.loop = true;
+        audio.volume = 0.3;
+      }
+
+      const playPromise = audio.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {
+          // If the browser blocks it, it's usually because the file can't be loaded or user gesture isn't recognized.
+          // Fix by running from a local server (Live Server) and ensuring benie.mp3 is in the same folder as the HTML.
+        });
+      }
     }
 
     // KEYBOARD for lightbox
