@@ -1215,6 +1215,75 @@
         min-width: 6rem;
       }
     }
+
+    /* ================================
+       MOBILE: reduce glow intensity
+    ================================ */
+    @media (max-width: 520px) {
+      body::after {
+        opacity: 0.25 !important;
+        animation: none !important;
+      }
+
+      /* reduce heavy glow effects */
+      #welcome .heart-icon,
+      .final-message .big-heart,
+      .section-header h2,
+      .time-value {
+        filter: none !important;
+        text-shadow: none !important;
+        animation: none !important;
+      }
+
+      .floating-heart {
+        opacity: 0.25 !important;
+        filter: none !important;
+      }
+
+      /* reduce button glow */
+      #welcome .enter-btn {
+        animation: fadeInUp 0.8s ease 2s both !important;
+        box-shadow: 0 10px 25px hsla(340, 100%, 60%, 0.25) !important;
+      }
+
+      /* reduce hover glow on tiles/envelopes */
+      .gallery-item:hover,
+      .envelope:hover,
+      .time-unit:hover {
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45) !important;
+      }
+    }
+
+    /* ================================
+       COUNTDOWN: compact on small screens
+    ================================ */
+    @media (max-width: 520px) {
+      .countdown-display {
+        gap: 0.6rem !important;
+        flex-wrap: nowrap !important;
+        /* force one row */
+        overflow: hidden;
+      }
+
+      .time-unit {
+        padding: 0.9rem 0.7rem !important;
+        min-width: 0 !important;
+        flex: 1 1 0 !important;
+        /* 4 equal compact boxes */
+        border-radius: 1rem !important;
+      }
+
+      .time-value {
+        font-size: 1.9rem !important;
+        line-height: 1 !important;
+        margin-bottom: 0.35rem !important;
+      }
+
+      .time-label {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.12em !important;
+      }
+    }
   </style>
 </head>
 
@@ -1234,17 +1303,9 @@
       </div>
       <p class="quote">Every love story is beautiful, but ours is my favorite</p>
       <div class="enter-wrap">
-        <div class="click-character" aria-hidden="true">
-          <div class="head"></div>
-          <div class="body"></div>
-          <div class="arm"></div>
 
-          <div class="sign">
-            <span>CLICK ME</span>
-          </div>
-        </div>
 
-        <button class="enter-btn" onclick="enterSite()">FOR MY BEAUTIFUL BENIE/button>
+        <button class="enter-btn" onclick="enterSite()">FOR MY BEAUTIFUL BENIE</button>
       </div>
     </div>
     <!-- Sparkles -->
