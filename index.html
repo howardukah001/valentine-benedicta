@@ -71,163 +71,62 @@
 
     /* Animations */
     @keyframes ambientGlow {
-      0% {
-        opacity: 0.3;
-      }
-
-      100% {
-        opacity: 0.6;
-      }
+      0% { opacity: 0.3; }
+      100% { opacity: 0.6; }
     }
 
     @keyframes heartBeat {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      25% {
-        transform: scale(1.15);
-      }
-
-      50% {
-        transform: scale(1.05);
-      }
-
-      75% {
-        transform: scale(1.2);
-      }
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.15); }
+      50% { transform: scale(1.05); }
+      75% { transform: scale(1.2); }
     }
 
     @keyframes pulseGlow {
-
-      0%,
-      100% {
-        box-shadow: 0 0 30px hsla(340, 100%, 60%, 0.6), 0 0 60px hsla(280, 100%, 60%, 0.3);
-      }
-
-      50% {
-        box-shadow: 0 0 50px hsla(340, 100%, 60%, 0.8), 0 0 100px hsla(280, 100%, 60%, 0.5);
-      }
+      0%, 100% { box-shadow: 0 0 30px hsla(340, 100%, 60%, 0.6), 0 0 60px hsla(280, 100%, 60%, 0.3); }
+      50% { box-shadow: 0 0 50px hsla(340, 100%, 60%, 0.8), 0 0 100px hsla(280, 100%, 60%, 0.5); }
     }
 
     @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) translateX(0) rotate(0deg);
-        opacity: 0.8;
-      }
-
-      100% {
-        transform: translateY(-10vh) translateX(var(--drift, 0)) rotate(360deg);
-        opacity: 0;
-      }
+      0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0.8; }
+      100% { transform: translateY(-10vh) translateX(var(--drift, 0)) rotate(360deg); opacity: 0; }
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @keyframes particleFloat {
-
-      0%,
-      100% {
-        transform: translate(0, 0) scale(1);
-      }
-
-      25% {
-        transform: translate(10px, -20px) scale(1.2);
-      }
-
-      50% {
-        transform: translate(-5px, -40px) scale(0.8);
-      }
-
-      75% {
-        transform: translate(-15px, -20px) scale(1.1);
-      }
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(10px, -20px) scale(1.2); }
+      50% { transform: translate(-5px, -40px) scale(0.8); }
+      75% { transform: translate(-15px, -20px) scale(1.1); }
     }
 
     @keyframes shimmer {
-      0% {
-        background-position: -200% center;
-      }
-
-      100% {
-        background-position: 200% center;
-      }
-    }
-
-    @keyframes rotateGradient {
-      0% {
-        filter: hue-rotate(0deg);
-      }
-
-      100% {
-        filter: hue-rotate(360deg);
-      }
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
     }
 
     @keyframes bounce {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     @keyframes pulseSlow {
-
-      0%,
-      100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.1);
-      }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
     @keyframes glowPulse {
-
-      0%,
-      100% {
-        text-shadow: 0 0 20px var(--accent-pink), 0 0 40px var(--accent-rose);
-      }
-
-      50% {
-        text-shadow: 0 0 40px var(--accent-pink), 0 0 80px var(--accent-rose), 0 0 120px var(--accent-purple);
-      }
-    }
-
-    /* Particle Canvas */
-    #particles-canvas {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
+      0%, 100% { text-shadow: 0 0 20px var(--accent-pink), 0 0 40px var(--accent-rose); }
+      50% { text-shadow: 0 0 40px var(--accent-pink), 0 0 80px var(--accent-rose), 0 0 120px var(--accent-purple); }
     }
 
     /* Floating Hearts */
@@ -354,12 +253,12 @@
       border: none;
       border-radius: 60px;
       cursor: pointer;
-      animation: fadeInUp 0.8s ease 2s both, pulseGlow 3s ease-in-out infinite;
       transition: all 0.3s ease;
       text-transform: uppercase;
       box-shadow: 0 10px 40px hsla(340, 100%, 60%, 0.4);
       position: relative;
       overflow: hidden;
+      animation: fadeInUp 0.8s ease 2s both, btnGlow 1.8s ease-in-out infinite;
     }
 
     #welcome .enter-btn::before {
@@ -376,113 +275,19 @@
       box-shadow: 0 15px 60px hsla(340, 100%, 60%, 0.6);
     }
 
-    #welcome .enter-btn:active {
-      transform: scale(0.98);
-    }
+    #welcome .enter-btn:active { transform: scale(0.98); }
 
-    /* ================================
-       CLICK ME CHARACTER (WELCOME)
-    ================================ */
-    .enter-wrap {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-    }
-
-    .click-character {
-      position: relative;
-      width: 96px;
-      height: 130px;
-      animation: bounce 2.6s ease-in-out infinite;
-      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, .35));
-    }
-
-    /* head */
-    .click-character .head {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin: 0 auto;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, .35), transparent 35%),
-        linear-gradient(135deg, rgba(255, 180, 205, 1), rgba(255, 105, 150, 1));
-    }
-
-    /* body */
-    .click-character .body {
-      width: 32px;
-      height: 46px;
-      border-radius: 18px;
-      margin: 6px auto 0;
-      background: linear-gradient(135deg, rgba(255, 95, 150, 1), rgba(255, 45, 120, 1));
-    }
-
-    /* arm holding sign */
-    .click-character .arm {
-      position: absolute;
-      width: 28px;
-      height: 8px;
-      border-radius: 10px;
-      top: 62px;
-      left: 42px;
-      transform: rotate(-18deg);
-      background: rgba(255, 95, 150, 1);
-    }
-
-    /* sign */
-    .click-character .sign {
-      position: absolute;
-      top: 18px;
-      left: 62px;
-      padding: 8px 12px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, .95);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, .25);
-      transform: rotate(-6deg);
-      animation: pulseSlow 2.2s ease-in-out infinite;
-      border: 1px solid rgba(0, 0, 0, .06);
-    }
-
-    .click-character .sign::before {
-      content: "";
-      position: absolute;
-      left: -10px;
-      top: 50%;
-      width: 12px;
-      height: 4px;
-      transform: translateY(-50%);
-      border-radius: 8px;
-      background: rgba(255, 95, 150, 1);
-    }
-
-    .click-character .sign span {
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      letter-spacing: .12em;
-      font-size: .75rem;
-      color: rgba(255, 45, 120, 1);
-      white-space: nowrap;
-    }
-
-    /* Mobile: put character above button */
-    @media (max-width: 520px) {
-      .enter-wrap {
-        flex-direction: column;
-        gap: .75rem;
+    @keyframes btnGlow {
+      0%, 100% {
+        box-shadow: 0 10px 35px hsla(340, 100%, 60%, 0.35),
+          0 0 22px hsla(280, 100%, 65%, 0.22);
+        transform: translateY(0);
       }
-
-      .click-character {
-        transform: scale(.9);
+      50% {
+        box-shadow: 0 14px 48px hsla(340, 100%, 60%, 0.55),
+          0 0 36px hsla(280, 100%, 65%, 0.35);
+        transform: translateY(-2px);
       }
-    }
-
-    /* Particles */
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      animation: particleFloat 6s ease-in-out infinite;
     }
 
     /* Main Content */
@@ -556,16 +361,13 @@
       transform: translateY(0);
     }
 
-    /* ================================
-       REASONS - PAPER HEART COLLAGE
-    ================================ */
+    /* Reasons section */
     .reasons-section {
       padding: 6rem 1.5rem;
       min-height: 100vh;
       position: relative;
     }
 
-    /* Paper background container */
     .love-collage {
       position: relative;
       max-width: 980px;
@@ -578,10 +380,6 @@
       border: 0;
     }
 
-    .love-collage::before {
-      display: none;
-    }
-
     .main-heart {
       width: min(820px, 95vw);
       height: auto;
@@ -589,162 +387,6 @@
       margin: 0 auto;
       filter: drop-shadow(0 18px 35px rgba(0, 0, 0, .45));
     }
-
-    /* Heart stage */
-    .heart-stage {
-      position: relative;
-      width: min(820px, 92vw);
-      height: min(620px, 68vw);
-      margin: 0 auto;
-    }
-
-    /* Tiles (photos) */
-    .heart-tile {
-      position: absolute;
-      width: clamp(52px, 6.2vw, 84px);
-      height: clamp(52px, 6.2vw, 84px);
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, .20);
-      transform: translate(-50%, -50%);
-      transition: transform .25s ease, box-shadow .25s ease;
-      background: #ddd;
-    }
-
-    .heart-tile:hover {
-      transform: translate(-50%, -50%) scale(1.06);
-      box-shadow: 0 14px 34px rgba(0, 0, 0, .28);
-      z-index: 5;
-    }
-
-    /* Center note */
-    .center-note {
-      position: absolute;
-      left: 50%;
-      top: 40%;
-      transform: translate(-50%, -50%) rotate(-6deg);
-      z-index: 6;
-    }
-
-    .note-paper {
-      position: relative;
-      padding: 18px 26px;
-      background: #f4efe7;
-      border-radius: 10px;
-      box-shadow: 0 18px 55px rgba(0, 0, 0, .25);
-      border: 1px solid rgba(0, 0, 0, .08);
-    }
-
-    .note-paper p {
-      margin: 0;
-      font-family: "Dancing Script", cursive;
-      font-size: clamp(1.4rem, 2.3vw, 2.1rem);
-      color: rgba(40, 40, 40, .85);
-      line-height: 1.1;
-      letter-spacing: .4px;
-    }
-
-    /* tape */
-    .tape {
-      position: absolute;
-      width: 68px;
-      height: 26px;
-      background: rgba(235, 220, 190, .85);
-      border: 1px solid rgba(0, 0, 0, .08);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
-      backdrop-filter: blur(2px);
-    }
-
-    .tape-left {
-      left: -20px;
-      top: -14px;
-      transform: rotate(-18deg);
-    }
-
-    .tape-right {
-      right: -20px;
-      top: -10px;
-      transform: rotate(16deg);
-    }
-
-    /* mini notes */
-    .mini-note {
-      position: absolute;
-      width: 110px;
-      height: 110px;
-      z-index: 5;
-    }
-
-    .mini-paper {
-      width: 100%;
-      height: 100%;
-      border-radius: 10px;
-      background: #f4efe7;
-      border: 1px solid rgba(0, 0, 0, .08);
-      box-shadow: 0 14px 42px rgba(0, 0, 0, .22);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .mini-tape {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%) rotate(-7deg);
-      width: 64px;
-      height: 24px;
-      background: rgba(235, 220, 190, .85);
-      border: 1px solid rgba(0, 0, 0, .08);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
-    }
-
-    .note-left {
-      left: 6%;
-      top: 68%;
-      transform: rotate(-7deg);
-    }
-
-    .note-right {
-      right: 7%;
-      top: 26%;
-      transform: rotate(8deg);
-    }
-
-    .note-bottom {
-      right: 12%;
-      bottom: 5%;
-      transform: rotate(-10deg);
-      width: 140px;
-      height: 90px;
-    }
-
-    .doodle {
-      font-size: 2.2rem;
-      opacity: .85;
-    }
-
-    .kiss {
-      font-size: 2rem;
-      opacity: .9;
-    }
-
-    .mini-text {
-      font-family: "Dancing Script", cursive;
-    }
-
-    /* on small screens hide mini notes for cleanliness */
-    @media (max-width: 520px) {
-      .mini-note {
-        display: none;
-      }
-
-      .center-note {
-        top: 42%;
-      }
-    }
-
-
 
     /* Gallery */
     .gallery-section {
@@ -759,17 +401,8 @@
       gap: 1.5rem;
     }
 
-    @media (min-width: 768px) {
-      .gallery-grid {
-        columns: 3;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .gallery-grid {
-        columns: 4;
-      }
-    }
+    @media (min-width: 768px) { .gallery-grid { columns: 3; } }
+    @media (min-width: 1024px) { .gallery-grid { columns: 4; } }
 
     .gallery-item {
       break-inside: avoid;
@@ -812,9 +445,7 @@
       color: white;
     }
 
-    .gallery-item:hover .overlay {
-      opacity: 1;
-    }
+    .gallery-item:hover .overlay { opacity: 1; }
 
     /* Lightbox */
     .lightbox {
@@ -829,9 +460,7 @@
       padding: 2rem;
     }
 
-    .lightbox.active {
-      display: flex;
-    }
+    .lightbox.active { display: flex; }
 
     .lightbox img,
     .lightbox video {
@@ -842,17 +471,10 @@
       box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
     }
 
-    .lightbox video {
-      background: #000;
-    }
+    .lightbox video { background: #000; }
 
-    .lightbox-media {
-      display: none;
-    }
-
-    .lightbox-media.active {
-      display: block;
-    }
+    .lightbox-media { display: none; }
+    .lightbox-media.active { display: block; }
 
     .lightbox button {
       position: absolute;
@@ -877,37 +499,16 @@
       transform: scale(1.1);
     }
 
-    .lightbox .close-btn {
-      top: 2rem;
-      right: 2rem;
-    }
+    .lightbox .close-btn { top: 2rem; right: 2rem; }
+    .lightbox .prev-btn { left: 2rem; }
+    .lightbox .next-btn { right: 2rem; }
 
-    .lightbox .prev-btn {
-      left: 2rem;
-    }
-
-    .lightbox .next-btn {
-      right: 2rem;
-    }
-
-    /* Love Letters */
-    .letters-section {
-      padding: 6rem 1.5rem;
-      min-height: 100vh;
-    }
-
-    .letters-grid {
-      max-width: 60rem;
-      margin: 0 auto;
-      display: grid;
-      gap: 2.5rem;
-    }
+    /* Letters */
+    .letters-section { padding: 6rem 1.5rem; min-height: 100vh; }
+    .letters-grid { max-width: 60rem; margin: 0 auto; display: grid; gap: 2.5rem; }
 
     @media (min-width: 768px) {
-      .letters-grid {
-        grid-template-columns: 1fr 1fr;
-        align-items: start;
-      }
+      .letters-grid { grid-template-columns: 1fr 1fr; align-items: start; }
     }
 
     .envelope {
@@ -942,11 +543,7 @@
       box-shadow: 0 5px 20px hsla(340, 100%, 60%, 0.5);
     }
 
-    .envelope .closed {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
+    .envelope .closed { padding: 4rem 2rem; text-align: center; }
     .envelope .closed .mail-icon {
       font-size: 4rem;
       margin-bottom: 1.5rem;
@@ -962,24 +559,10 @@
       font-family: 'Dancing Script', cursive;
     }
 
-    .envelope .closed .tap {
-      color: var(--text-secondary);
-      font-size: 1rem;
-    }
-
-    .envelope .opened {
-      display: none;
-      padding: 2rem;
-    }
-
-    .envelope.open .closed {
-      display: none;
-    }
-
-    .envelope.open .opened {
-      display: block;
-      animation: fadeInUp 0.6s ease;
-    }
+    .envelope .closed .tap { color: var(--text-secondary); font-size: 1rem; }
+    .envelope .opened { display: none; padding: 2rem; }
+    .envelope.open .closed { display: none; }
+    .envelope.open .opened { display: block; animation: fadeInUp 0.6s ease; }
 
     .envelope .opened h3 {
       display: flex;
@@ -991,9 +574,7 @@
       font-family: 'Dancing Script', cursive;
     }
 
-    .envelope .opened h3 span.h {
-      color: var(--accent-pink);
-    }
+    .envelope .opened h3 span.h { color: var(--accent-pink); }
 
     .envelope .letter-body {
       background: var(--glass-bg);
@@ -1016,22 +597,11 @@
       font-size: 0.95rem;
     }
 
-    /* Animated Messages */
-    .messages-section {
-      padding: 7rem 1.5rem;
-      overflow: hidden;
-    }
+    /* Messages */
+    .messages-section { padding: 7rem 1.5rem; overflow: hidden; }
+    .messages-section .messages-container { max-width: 60rem; margin: 0 auto; }
 
-    .messages-section .messages-container {
-      max-width: 60rem;
-      margin: 0 auto;
-    }
-
-    .message-item {
-      text-align: center;
-      position: relative;
-      padding: 2.5rem 0;
-    }
+    .message-item { text-align: center; position: relative; padding: 2.5rem 0; }
 
     .message-item p {
       font-family: 'Dancing Script', cursive;
@@ -1053,18 +623,10 @@
       animation: pulseSlow 3s ease-in-out infinite;
     }
 
-    .message-item .side-heart.left {
-      left: -2rem;
-    }
+    .message-item .side-heart.left { left: -2rem; }
+    .message-item .side-heart.right { right: -2rem; }
 
-    .message-item .side-heart.right {
-      right: -2rem;
-    }
-
-    .final-message {
-      text-align: center;
-      margin-top: 6rem;
-    }
+    .final-message { text-align: center; margin-top: 6rem; }
 
     .final-message .big-heart {
       font-size: 5rem;
@@ -1103,7 +665,6 @@
       font-family: 'Dancing Script', cursive;
     }
 
-    /* Footer */
     footer {
       padding: 4rem 1.5rem;
       text-align: center;
@@ -1112,7 +673,7 @@
       border-top: 1px solid var(--glass-border);
     }
 
-    /* Countdown Timer */
+    /* Countdown */
     .countdown-section {
       padding: 6rem 1.5rem;
       min-height: 100vh;
@@ -1122,26 +683,10 @@
       justify-content: center;
     }
 
-    .countdown-container {
-      max-width: 50rem;
-      margin: 0 auto;
-      text-align: center;
-    }
+    .countdown-container { max-width: 50rem; margin: 0 auto; text-align: center; }
+    .since-text { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 3rem; font-family: 'Dancing Script', cursive; }
 
-    .since-text {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      margin-bottom: 3rem;
-      font-family: 'Dancing Script', cursive;
-    }
-
-    .countdown-display {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
+    .countdown-display { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
 
     .time-unit {
       background: var(--glass-bg);
@@ -1154,27 +699,6 @@
       transition: all 0.4s ease;
       position: relative;
       overflow: hidden;
-    }
-
-    .time-unit::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--gradient-accent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .time-unit:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5), 0 0 40px hsla(340, 100%, 60%, 0.3);
-    }
-
-    .time-unit:hover::before {
-      opacity: 1;
     }
 
     .time-value {
@@ -1204,235 +728,6 @@
       font-family: 'Dancing Script', cursive;
       animation: pulseSlow 3s ease-in-out infinite;
     }
-
-    @media (max-width: 768px) {
-      .countdown-display {
-        gap: 1rem;
-      }
-
-      .time-unit {
-        padding: 1.5rem 1.5rem;
-        min-width: 6rem;
-      }
-    }
-
-    /* ================================
-       MOBILE: reduce glow intensity
-    ================================ */
-    @media (max-width: 520px) {
-      body::after {
-        opacity: 0.25 !important;
-        animation: none !important;
-      }
-
-      /* reduce heavy glow effects */
-      #welcome .heart-icon,
-      .final-message .big-heart,
-      .section-header h2,
-      .time-value {
-        filter: none !important;
-        text-shadow: none !important;
-        animation: none !important;
-      }
-
-      .floating-heart {
-        opacity: 0.25 !important;
-        filter: none !important;
-      }
-
-      /* reduce button glow */
-      #welcome .enter-btn {
-        animation: fadeInUp 0.8s ease 2s both !important;
-        box-shadow: 0 10px 25px hsla(340, 100%, 60%, 0.25) !important;
-      }
-
-      /* reduce hover glow on tiles/envelopes */
-      .gallery-item:hover,
-      .envelope:hover,
-      .time-unit:hover {
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45) !important;
-      }
-    }
-
-    /* ================================
-       COUNTDOWN: compact on small screens
-    ================================ */
-    @media (max-width: 520px) {
-      .countdown-display {
-        gap: 0.6rem !important;
-        flex-wrap: nowrap !important;
-        /* force one row */
-        overflow: hidden;
-      }
-
-      .time-unit {
-        padding: 0.9rem 0.7rem !important;
-        min-width: 0 !important;
-        flex: 1 1 0 !important;
-        /* 4 equal compact boxes */
-        border-radius: 1rem !important;
-      }
-
-      .time-value {
-        font-size: 1.9rem !important;
-        line-height: 1 !important;
-        margin-bottom: 0.35rem !important;
-      }
-
-      .time-label {
-        font-size: 0.7rem !important;
-        letter-spacing: 0.12em !important;
-      }
-    }
-
-
-    /* ================================
-       MOBILE BUTTON – tighter like desktop
-    ================================ */
-    @media (max-width: 520px) {
-      #welcome .enter-btn {
-        white-space: nowrap;
-
-        /* Reduce spacing */
-        letter-spacing: 0.03em !important;
-        /* tighter letters */
-        padding: 0.9rem 1.4rem !important;
-        /* smaller horizontal padding */
-        font-size: 0.95rem !important;
-
-        /* Remove exaggerated glow */
-        box-shadow: 0 8px 20px rgba(255, 80, 120, 0.25) !important;
-        animation: fadeInUp 0.8s ease 2s both, btnGlowMobile 1.8s ease-in-out infinite !important;
-      }
-    }
-
-    @keyframes btnGlowMobile {
-
-      0%,
-      100% {
-        box-shadow: 0 8px 22px hsla(340, 100%, 60%, 0.28);
-        transform: translateY(0);
-      }
-
-      50% {
-        box-shadow: 0 10px 28px hsla(340, 100%, 60%, 0.40);
-        transform: translateY(-1px);
-      }
-    }
-
-    /* ================================
-       SCROLL GUIDE (fixed helper)
-    ================================ */
-    .scroll-guide {
-      position: fixed;
-      left: 50%;
-      bottom: 18px;
-      transform: translateX(-50%);
-      z-index: 50;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity .4s ease, transform .4s ease;
-    }
-
-    .scroll-guide.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    .scroll-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      padding: .65rem 1rem;
-      border-radius: 999px;
-      background: hsla(340, 100%, 95%, 0.08);
-      border: 1px solid hsla(340, 100%, 95%, 0.12);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
-    }
-
-    .scroll-text {
-      font-size: .95rem;
-      color: var(--text-secondary);
-      letter-spacing: .02em;
-    }
-
-    .scroll-arrow {
-      font-size: 1.2rem;
-      color: var(--accent-pink);
-      animation: scrollBounce 1.4s ease-in-out infinite;
-      filter: drop-shadow(0 0 10px hsla(340, 100%, 60%, 0.35));
-    }
-
-    @keyframes scrollBounce {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-6px);
-      }
-    }
-
-    /* Mobile: slightly smaller */
-    @media (max-width: 520px) {
-      .scroll-text {
-        font-size: .85rem;
-      }
-
-      .scroll-pill {
-        padding: .55rem .85rem;
-      }
-    }
-
-    /* Clickable glow cue for the enter button */
-    #welcome .enter-btn {
-      animation: fadeInUp 0.8s ease 2s both, btnGlow 1.8s ease-in-out infinite;
-    }
-
-    @keyframes btnGlow {
-
-      0%,
-      100% {
-        box-shadow: 0 10px 35px hsla(340, 100%, 60%, 0.35),
-          0 0 22px hsla(280, 100%, 65%, 0.22);
-        transform: translateY(0);
-      }
-
-      50% {
-        box-shadow: 0 14px 48px hsla(340, 100%, 60%, 0.55),
-          0 0 36px hsla(280, 100%, 65%, 0.35);
-        transform: translateY(-2px);
-      }
-    }
-
-    /* ================================
-       MOBILE: Make main.png fill space
-    ================================ */
-    @media (max-width: 520px) {
-
-      .love-collage {
-        padding: 0;
-      }
-
-      .main-heart {
-        width: 100vw !important;
-        /* full screen width */
-        max-width: 100vw !important;
-        height: auto;
-        margin-left: calc(-50vw + 50%);
-        /* remove side margins */
-        border-radius: 0;
-        /* optional: edge-to-edge look */
-      }
-
-      .reasons-section {
-        padding-left: 0;
-        padding-right: 0;
-      }
-    }
   </style>
 </head>
 
@@ -1452,25 +747,14 @@
       </div>
       <p class="quote">Every love story is beautiful, but ours is my favorite</p>
       <div class="enter-wrap">
-
-
         <button class="enter-btn" onclick="enterSite()">FOR MY BEAUTIFUL BENIE</button>
       </div>
     </div>
-    <!-- Sparkles -->
-    <div class="sparkle" style="left:15%;top:20%;animation-delay:0s"></div>
-    <div class="sparkle" style="left:30%;top:45%;animation-delay:0.4s"></div>
-    <div class="sparkle" style="left:45%;top:20%;animation-delay:0.8s"></div>
-    <div class="sparkle" style="left:60%;top:45%;animation-delay:1.2s"></div>
-    <div class="sparkle" style="left:75%;top:20%;animation-delay:1.6s"></div>
-    <div class="sparkle" style="left:90%;top:45%;animation-delay:2s"></div>
   </div>
 
   <!-- Main Content -->
   <div id="main-content">
     <div class="floating-hearts" id="main-hearts"></div>
-
-
 
     <!-- REASONS I LOVE YOU -->
     <section class="reasons-section">
@@ -1480,7 +764,6 @@
         <div class="divider"><span class="line"></span><span class="heart">♥</span><span class="line"></span></div>
       </div>
 
-      <!-- ✅ New collage container -->
       <div class="love-collage reveal">
         <img src="images/main.png" class="main-heart" alt="Heart collage" />
       </div>
@@ -1556,31 +839,19 @@
     </section>
 
     <footer>Made with 💕 for Benedicta</footer>
-
-    <!-- Scroll Guide -->
-    <div class="scroll-guide" id="scrollGuide">
-      <div class="scroll-pill">
-        <span class="scroll-text">Scroll gently — there’s more love below</span>
-        <span class="scroll-arrow">↓</span>
-      </div>
-    </div>
   </div>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <button class="close-btn" onclick="closeLightbox()">✕</button>
+    <button class="close-btn" onclick="event.stopPropagation(); closeLightbox()">✕</button>
     <button class="prev-btn" onclick="event.stopPropagation();prevPhoto()">‹</button>
     <button class="next-btn" onclick="event.stopPropagation();nextPhoto()">›</button>
     <img id="lightbox-img" class="lightbox-media" src="" alt="" onclick="event.stopPropagation()" />
-    <video id="lightbox-video" class="lightbox-media" controls loop onclick="event.stopPropagation()"></video>
+    <video id="lightbox-video" class="lightbox-media" controls loop muted playsinline
+      onclick="event.stopPropagation()"></video>
   </div>
 
   <script>
-
-
-    // PHOTOS AND VIDEOS GALLERY
-    // You can use any image format: .jpg, .png, .jpeg, .webp, etc.
-    // Just update the file extension to match your actual files!
     const photos = [
       { type: "video", src: "images/photo1.MP4", alt: "Our moment" },
       { type: "image", src: "images/photo_1_2026-02-11_01-13-15.jpg", alt: "Together" },
@@ -1672,7 +943,6 @@ And I pray continuously that God will protect your smile.`
       }
     ];
 
-
     const messages = [
       "You are the love of my life",
       "Every moment with you is precious",
@@ -1681,7 +951,6 @@ And I pray continuously that God will protect your smile.`
       "You are my greatest adventure",
     ];
 
-    // FLOATING HEARTS
     function createHearts(containerId, count) {
       const c = document.getElementById(containerId);
       for (let i = 0; i < count; i++) {
@@ -1695,58 +964,11 @@ And I pray continuously that God will protect your smile.`
     }
     createHearts('welcome-hearts', 15);
 
-    // SCROLL GUIDE – 20 second pause logic
-    function initScrollGuide() {
-      const guide = document.getElementById('scrollGuide');
-      if (!guide) return;
-
-      let scrollTimeout = null;
-      let reachedBottom = false;
-
-      function isAtBottom() {
-        return (window.innerHeight + window.scrollY) >=
-          (document.body.offsetHeight - 5);
-      }
-
-      function showGuide() {
-        if (!reachedBottom) {
-          guide.classList.add('show');
-        }
-      }
-
-      function hideGuide() {
-        guide.classList.remove('show');
-      }
-
-      // Show once after entering
-      setTimeout(showGuide, 900);
-
-      window.addEventListener('scroll', () => {
-        hideGuide(); // hide while scrolling
-
-        if (isAtBottom()) {
-          reachedBottom = true;
-          hideGuide();
-          return;
-        }
-
-        // Reset timer on every scroll
-        clearTimeout(scrollTimeout);
-
-        scrollTimeout = setTimeout(() => {
-          if (!isAtBottom()) {
-            showGuide();
-          }
-        }, 20000); // 20 seconds pause
-      }, { passive: true });
-    }
-
-    // ENTER SITE
     let initialized = false;
     let countdownInterval = null;
 
     function enterSite() {
-      startMusic(); // ✅ must be inside the click
+      startMusic();
 
       document.getElementById('welcome').classList.add('hidden');
 
@@ -1761,78 +983,71 @@ And I pray continuously that God will protect your smile.`
 
         if (!initialized) {
           initialized = true;
-
           initializePage();
           initReveal();
-          initScrollGuide();
-
           updateCountdown();
           countdownInterval = setInterval(updateCountdown, 1000);
         }
       }, 800);
     }
 
-    // INITIALIZATION - Render all sections when page loads
     function initializePage() {
-      // ✅ RENDER REASONS - PAPER HEART COLLAGE (like the reference image)
-      // Collage is now a static image defined in HTML
-
-
-      // RENDER GALLERY
       const gal = document.getElementById('gallery');
       photos.forEach((p, i) => {
         if (p.type === 'video') {
           gal.innerHTML += `
-      <div class="gallery-item reveal" style="transition-delay:${i * 0.05}s" onclick="openLightbox(${i})">
-        <video src="${p.src}" autoplay muted loop playsinline></video>
-        <div class="overlay">▶️</div>
-      </div>`;
+            <div class="gallery-item reveal" style="transition-delay:${i * 0.05}s" onclick="openLightbox(${i})">
+              <video src="${p.src}" autoplay muted loop playsinline></video>
+              <div class="overlay">▶️</div>
+            </div>`;
         } else {
           gal.innerHTML += `
-      <div class="gallery-item reveal" style="transition-delay:${i * 0.05}s" onclick="openLightbox(${i})">
-        <img src="${p.src}" alt="${p.alt}" loading="lazy" />
-        <div class="overlay">♥</div>
-      </div>`;
+            <div class="gallery-item reveal" style="transition-delay:${i * 0.05}s" onclick="openLightbox(${i})">
+              <img src="${p.src}" alt="${p.alt}" loading="lazy" />
+              <div class="overlay">♥</div>
+            </div>`;
         }
       });
 
-      // RENDER LETTERS
       const lettersEl = document.getElementById('letters');
       letters.forEach((l, i) => {
         lettersEl.innerHTML += `
-      <div class="envelope reveal" id="env-${i}" style="transition-delay:${i * 0.1}s" onclick="toggleLetter(${i})">
-        <div class="seal">♥</div>
-        <div class="closed">
-          <span class="mail-icon">✉️</span>
-          <h3>${l.title}</h3>
-          <p class="tap">Tap to open 💌</p>
-        </div>
-        <div class="opened">
-          <h3><span class="h">♥</span> ${l.title}</h3>
-          <div class="letter-body"><p>${l.content}</p></div>
-          <p class="tap-close">Tap to close</p>
-        </div>
-      </div>`;
+          <div class="envelope reveal" id="env-${i}" style="transition-delay:${i * 0.1}s" onclick="toggleLetter(${i})">
+            <div class="seal">♥</div>
+            <div class="closed">
+              <span class="mail-icon">✉️</span>
+              <h3>${l.title}</h3>
+              <p class="tap">Tap to open 💌</p>
+            </div>
+            <div class="opened">
+              <h3><span class="h">♥</span> ${l.title}</h3>
+              <div class="letter-body"><p>${l.content}</p></div>
+              <p class="tap-close">Tap to close</p>
+            </div>
+          </div>`;
       });
 
-      // RENDER MESSAGES
       const msgsEl = document.getElementById('messages');
       messages.forEach((m, i) => {
         msgsEl.innerHTML += `
-      <div class="message-item reveal" style="transition-delay:${i * 0.15}s">
-        <span class="side-heart left">♥</span>
-        <p>"${m}"</p>
-        <span class="side-heart right">♥</span>
-      </div>`;
+          <div class="message-item reveal" style="transition-delay:${i * 0.15}s">
+            <span class="side-heart left">♥</span>
+            <p>"${m}"</p>
+            <span class="side-heart right">♥</span>
+          </div>`;
       });
     }
 
-    // Initialization is now handled in enterSite() function
-
-    // LIGHTBOX FUNCTIONS
+    // LIGHTBOX
     let currentPhoto = 0;
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxVideo = document.getElementById('lightbox-video');
+
+    function forceMuteVideo() {
+      lightboxVideo.muted = true;
+      lightboxVideo.volume = 0;
+      lightboxVideo.defaultMuted = true;
+    }
 
     function openLightbox(i) {
       currentPhoto = i;
@@ -1841,8 +1056,11 @@ And I pray continuously that God will protect your smile.`
       if (item.type === 'video') {
         lightboxImg.classList.remove('active');
         lightboxVideo.classList.add('active');
+
         lightboxVideo.src = item.src;
+        forceMuteVideo();        // 🔇 always mute
         lightboxVideo.play();
+
       } else {
         lightboxVideo.classList.remove('active');
         lightboxVideo.pause();
@@ -1865,8 +1083,11 @@ And I pray continuously that God will protect your smile.`
       if (item.type === 'video') {
         lightboxImg.classList.remove('active');
         lightboxVideo.classList.add('active');
+
         lightboxVideo.src = item.src;
+        forceMuteVideo();       // 🔇 always mute
         lightboxVideo.play();
+
       } else {
         lightboxVideo.classList.remove('active');
         lightboxVideo.pause();
@@ -1882,8 +1103,11 @@ And I pray continuously that God will protect your smile.`
       if (item.type === 'video') {
         lightboxImg.classList.remove('active');
         lightboxVideo.classList.add('active');
+
         lightboxVideo.src = item.src;
+        forceMuteVideo();       // 🔇 always mute
         lightboxVideo.play();
+
       } else {
         lightboxVideo.classList.remove('active');
         lightboxVideo.pause();
@@ -1892,12 +1116,10 @@ And I pray continuously that God will protect your smile.`
       }
     }
 
-    // TOGGLE LETTER FUNCTION
     function toggleLetter(i) {
       document.getElementById('env-' + i).classList.toggle('open');
     }
 
-    // SCROLL REVEAL
     function initReveal() {
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
@@ -1905,7 +1127,7 @@ And I pray continuously that God will protect your smile.`
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     }
 
-    // COUNTDOWN TIMER
+    // COUNTDOWN
     function updateCountdown() {
       const startDate = new Date('2025-10-19T00:00:00').getTime();
       const now = new Date().getTime();
@@ -1922,24 +1144,17 @@ And I pray continuously that God will protect your smile.`
       document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
     }
 
-    // Countdown already initialized above
-
-    // MUSIC - starts on Enter click (no button)
+    // MUSIC
     let audio = null;
-
     function startMusic() {
       if (!audio) {
         audio = new Audio('benie.mp3');
         audio.loop = true;
         audio.volume = 0.3;
       }
-
       const playPromise = audio.play();
       if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.catch(() => {
-          // If the browser blocks it, it's usually because the file can't be loaded or user gesture isn't recognized.
-          // Fix by running from a local server (Live Server) and ensuring benie.mp3 is in the same folder as the HTML.
-        });
+        playPromise.catch(() => { });
       }
     }
 
@@ -1949,6 +1164,11 @@ And I pray continuously that God will protect your smile.`
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowRight') nextPhoto();
       if (e.key === 'ArrowLeft') prevPhoto();
+    });
+
+    // Extra safety: if user tries to unmute manually, force mute back
+    lightboxVideo.addEventListener('volumechange', () => {
+      if (!lightboxVideo.muted || lightboxVideo.volume > 0) forceMuteVideo();
     });
   </script>
 </body>
